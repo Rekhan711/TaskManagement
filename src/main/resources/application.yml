@@ -1,0 +1,37 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/taskdb
+    username: postgres
+    password: Daar3434
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  thymeleaf:
+    cache: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+  security:
+    user:
+      name: admin
+      password: admin
+      roles: ADMIN
+
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false

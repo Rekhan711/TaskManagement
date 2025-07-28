@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: layout">
+<section>
+    <h2>Создание задачи</h2>
+    <form action="/tasks/create" method="post" th:object="${task}">
+        <div class="mb-3">
+            <label>Заголовок</label>
+            <input type="text" th:field="*{title}" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Описание</label>
+            <textarea th:field="*{description}" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label>Статус</label>
+            <select th:field="*{status}" class="form-select">
+                <option th:each="status : ${T(TaskStatus).values()}" th:value="${status}" th:text="${status}"></option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>Приоритет</label>
+            <select th:field="*{priority}" class="form-select">
+                <option th:each="p : ${T(TaskPriority).values()}" th:value="${p}" th:text="${p}"></option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>Дедлайн</label>
+            <input type="datetime-local" th:field="*{deadline}" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success">Создать</button>
+    </form>
+</section>
+</html>
