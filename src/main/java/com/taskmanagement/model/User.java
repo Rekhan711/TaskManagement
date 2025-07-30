@@ -1,13 +1,8 @@
 package com.taskmanagement.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.scheduling.config.Task;
+import lombok.*;
 
-
-import javax.management.relation.Role;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -17,6 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
+
     @Id
     @GeneratedValue
     private UUID id;
