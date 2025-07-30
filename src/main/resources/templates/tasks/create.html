@@ -14,13 +14,17 @@
         <div class="mb-3">
             <label>Статус</label>
             <select th:field="*{status}" class="form-select">
-                <option th:each="status : ${T(TaskStatus).values()}" th:value="${status}" th:text="${status}"></option>
+                <option th:each="status : ${T(com.taskmanagement.model.TaskStatus).values()}"
+                        th:value="${status}"
+                        th:text="${status}"></option>
             </select>
         </div>
         <div class="mb-3">
             <label>Приоритет</label>
             <select th:field="*{priority}" class="form-select">
-                <option th:each="p : ${T(TaskPriority).values()}" th:value="${p}" th:text="${p}"></option>
+                <option th:each="p : ${T(com.taskmanagement.model.TaskPriority).values()}"
+                        th:value="${p}"
+                        th:text="${p}"></option>
             </select>
         </div>
         <div class="mb-3">
